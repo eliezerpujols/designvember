@@ -1,0 +1,27 @@
+// Footer
+
+.footer {
+   flex: none;
+   padding-top: 4em;
+   padding-bottom: 2em;
+
+   .wrapper {
+      display: flex;
+      justify-content: space-between;
+   }
+
+   &__item {
+      font-weight: 700;
+      line-height: 1.5;
+
+      &:first-child {
+         padding-right: 24px;
+      }
+   }
+
+   @include media(max, sm) {
+      &__item {
+         font-size: 1.5em;
+      }
+   }
+}

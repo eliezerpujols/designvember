@@ -1,0 +1,58 @@
+// Header
+
+.header {
+   flex: none;
+   margin-bottom: 7.444em;
+   
+   &__title {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      height: 166px;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-left: 8%;
+      font-size: 3.778em;
+      background-color: $color-secondary;
+
+      &::before,
+      &::after {
+         content: attr(data-content);
+         position: absolute;
+         overflow: hidden;
+         padding-top: 78px;
+         height: 166px;
+         font-family: $font-family-secondary;
+         font-size: 1em;
+         white-space: nowrap;
+         color: $color-secondary;
+      }
+      
+      &::before {
+         width: 100%;
+         color: $color-secondary;
+         background-color: $color-primary;
+      }
+      
+      &::after {
+         width: 215px;
+         color: $color-primary;
+         background-color: $color-secondary;
+      }
+
+      @include media(max, sm) {
+         height: 122px;
+
+         &::before,
+         &::after {
+            height: 122px;
+         }
+         
+         &::after {
+            width: 110px;
+            color: $color-primary;
+            background-color: $color-secondary;
+         }
+      }
+   }
+}

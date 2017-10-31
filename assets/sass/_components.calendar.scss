@@ -1,0 +1,65 @@
+// Data Calendar
+
+.calendar__day {
+   position: relative;
+   display: inline-block;
+   font-size: 2.667em;
+   font-weight: 700;
+   cursor: pointer;
+   transition: color 0.3s ease-out;
+   
+   &::before {
+      z-index: -1;
+      content: " ";
+      display: block;
+      position: absolute;
+      top: 6px;
+      right: 2px;
+      opacity: 0;
+      width: 56px;
+      height: 48px;
+      background-color: $color-secondary;
+      transition: opacity 0.3s ease-out;
+   }
+
+   &:hover {
+      color: $color-primary;
+      &::before {
+         opacity: 1;
+      }
+   }
+
+   @include media(min, sm) {
+      &::before {
+         top: 11px;
+         right: 3px;
+         width: 112px;
+         height: 88px
+      }   
+   }
+}
+
+.calendar__topic {
+   z-index: 2;
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   opacity: 0;
+   visibility: hidden;
+   font-size: 9em;
+   font-weight: 700;
+   text-transform: lowercase;
+   color: rgba(#000, 0.13);
+   pointer-events: none;
+   transition: all 0.3s ease-out;
+}
+
+.calendar__day {
+   &:hover {
+      & + .calendar__topic {
+         opacity: 1;
+         visibility: visible;
+      }
+   }
+}
