@@ -56,7 +56,9 @@
 }
 
 .calendar__day {
-   &:hover {
+   &:hover,
+   &:active,
+   &:focus {
       & + .calendar__topic {
          opacity: 1;
          visibility: visible;
