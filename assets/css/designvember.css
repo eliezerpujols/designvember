@@ -865,7 +865,7 @@ a:hover {
   transition: all 0.3s ease-out;
 }
 
-.calendar__day:hover + .calendar__topic {
+.calendar__day:hover + .calendar__topic, .calendar__day:active + .calendar__topic, .calendar__day:focus + .calendar__topic {
   opacity: 1;
   visibility: visible;
 }
